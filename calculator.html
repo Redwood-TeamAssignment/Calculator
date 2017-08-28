@@ -6,7 +6,11 @@
     <script type="text/css" src="css/styles.css"></script>
 </head>
 <body>
-<form id="calculator" name="calculator">
+<form name="calculator">
+    <div id="calculator">
+        <div class="top">
+            <div class="screen"></div>
+        </div>
     <table>
     <tr>
         <td><input type="button" class="buttonclick" value="1" onclick="numberEntry('1')"></td>
@@ -36,7 +40,7 @@
         <td> <input type="button" class="buttonclick" value="/" onclick="numberEntry('/')"></td>
     </tr>
     </table>
-
+    </div>
 
     <!--<input type="text" name="display" value="" readonly>-->
     <!--<textarea></textarea>-->
@@ -48,15 +52,14 @@
     "use strict";
 
 
-function reset(){
-    document.getElementById('calculator').reset()
-}
+        function reset(){
+            document.getElementById('calculator').reset()
+        }
         function numberEntry(clickedNumber) {
 
             var listValue = document.getElementsByClassName('buttonclick').value=clickedNumber;
             console.log(listValue);
         }
-
 
 </script>
 </body>
