@@ -2,3 +2,11 @@
 .buttonclick {
 
 }
+
+.screen {
+	max-width: 100%;
+}
+
+#calculator {
+	max-width: 40%;
+}

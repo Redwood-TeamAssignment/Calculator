@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculator</title>
-    <script type="text/css" src="css/styles.css"></script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <form name="calculator">
     <div id="calculator">
         <div class="top">
-            <div class="screen"></div>
+            <div class="screen">
+
+
+
+            </div>
         </div>
+
+
     <table>
+        <tr>
+        <input class="screen" id="result" type="text" name="display" value="" readonly>
+        </tr>
+
     <tr>
         <td><input type="button" class="buttonclick" value="1" onclick="numberEntry('1')"></td>
         <td><input type="button" class="buttonclick" value="2" onclick="numberEntry('2')"></td>
@@ -42,8 +52,7 @@
     </table>
     </div>
 
-    <!--<input type="text" name="display" value="" readonly>-->
-    <!--<textarea></textarea>-->
+
 
 
 </form>
@@ -51,15 +60,25 @@
 <script>
     "use strict";
 
+        var output;
+
+        var finalCalc = document.getElementById("result");
 
         function reset(){
-            document.getElementById('calculator').reset()
+            document.getElementById('calculator').reset();
         }
+
         function numberEntry(clickedNumber) {
 
             var listValue = document.getElementsByClassName('buttonclick').value=clickedNumber;
             console.log(listValue);
+
+            return finalCalc.innerHTML = clickedNumber;
+
+            console.log(clickedNumber);
         }
+
+
 
 </script>
 </body>
