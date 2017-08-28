@@ -3,29 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculator</title>
+    <script type="text/css" src="css/styles.css"></script>
 </head>
 <body>
 <form name="calculator">
-    <input type="button" value="1">
+    <input type="button" class="buttonclick" value="1" onclick="numberEntry()">
     <!--Need to add the onclicks-->
-    <input type="button" value="2">
-    <input type="button" value="3">
-    <input type="button" value="4">
+    <input type="button" class="buttonclick" value="2" onclick="numberEntry()">
+    <input type="button" class="buttonclick" value="3" onclick="numberEntry()">
+    <input type="button" class="buttonclick" value="4" onclick="numberEntry()">
+    <input type="button" class="buttonclick" value="6" onclick="numberEntry()">
+    <input type="button" class="buttonclick" value="7" onclick="numberEntry()">
+    <input type="button" class="buttonclick" value="8" onclick="numberEntry()">
 
-    <input type="button" value="5">
-    <input type="button" value="6">
-    <input type="button" value="7">
-    <input type="button" value="8">
+    <input type="button" class="buttonclick" value="9" onclick="numberEntry()">
+    <input type="button" class="buttonclick" value="0">
+    <input type="reset" class="buttonclick" value="C"  onclick="numberEntry()">
 
-    <input type="button" value="9">
-    <input type="button" value="0">
-    <input type="reset" value="C">
+    <input type="button" class="buttonclick" value="+" onclick="numberEntry()">
+    <input type="button" class="buttonclick" value="-" onclick="numberEntry()">
+    <input type="button" class="buttonclick" value="*" onclick="numberEntry()">
+    <input type="button" class="buttonclick" value="/" onclick="numberEntry()">
 
-    <input type="button" value="+">
-    <input type="button" value="-">
-    <input type="button" value="*">
-    <input type="button" value="/">
+    <input type="button" class="buttonclick" value="TEST" onclick="numberEntry()">
+
+    <input type="text" name="display" value="" readonly>
+
 
 </form>
+
+<script>
+    "use strict";
+
+
+
+        function numberEntry() {
+            var numberValue = document.getElementsByClassName('buttonclick').value;
+            console.log(numberValue);
+        }
+
+
+
+
+</script>
 </body>
 </html>
