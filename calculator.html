@@ -7,28 +7,38 @@
 </head>
 <body>
 <form id="calculator" name="calculator">
-    <input type="button" class="buttonclick" value="1" onclick="numberEntry('1')">
-    <input type="button" class="buttonclick" value="2" onclick="numberEntry('2')">
-    <input type="button" class="buttonclick" value="3" onclick="numberEntry('3')">
-    <input type="button" class="buttonclick" value="4" onclick="numberEntry('4')">
-    <input type="button" class="buttonclick" value="5" onclick="numberEntry('5')">
+    <table>
+    <tr>
+        <td><input type="button" class="buttonclick" value="1" onclick="numberEntry('1')"></td>
+        <td><input type="button" class="buttonclick" value="2" onclick="numberEntry('2')"></td>
+        <td><input type="button" class="buttonclick" value="3" onclick="numberEntry('3')"></td>
+        <td><input type="button" class="buttonclick" value="+" onclick="numberEntry('+')"></td>
+    </tr>
 
-    <input type="button" class="buttonclick" value="6" onclick="numberEntry('6')">
-    <input type="button" class="buttonclick" value="7" onclick="numberEntry('7')">
-    <input type="button" class="buttonclick" value="8" onclick="numberEntry('8')">
+    <tr>
+        <td><input type="button" class="buttonclick" value="4" onclick="numberEntry('4')"></td>
+        <td><input type="button" class="buttonclick" value="5" onclick="numberEntry('5')"></td>
+        <td><input type="button" class="buttonclick" value="6" onclick="numberEntry('6')"></td>
+        <td><input type="button" class="buttonclick" value="-" onclick="numberEntry('-')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" class="buttonclick" value="7" onclick="numberEntry('7')"></td>
+        <td><input type="button" class="buttonclick" value="8" onclick="numberEntry('8')"></td>
+        <td><input type="button" class="buttonclick" value="9" onclick="numberEntry('9')"></td>
+        <td><input type="button" class="buttonclick" value="*" onclick="numberEntry('*')"></td>
+    </tr>
 
-    <input type="button" class="buttonclick" value="9" onclick="numberEntry('9')">
-    <input type="button" class="buttonclick" value="0" onclick="numberEntry('0')">
-    <input type="reset" class="buttonclick" value="C"  onclick="reset()">
+<tr>
+    <td><input type="reset" class="buttonclick" value="C"  onclick="reset()"></td>
+    <td><input type="button" class="buttonclick" value="0" onclick="numberEntry('0')"></td>
+    <td><input type="button" class="buttonclick" value="=" onclick="numberEntry('=')"></td>
+    <td> <input type="button" class="buttonclick" value="/" onclick="numberEntry('/')"></td>
+</tr>
+        </tabel>
 
-    <input type="button" class="buttonclick" value="+" onclick="numberEntry('+')">
-    <input type="button" class="buttonclick" value="-" onclick="numberEntry('-')">
-    <input type="button" class="buttonclick" value="*" onclick="numberEntry('*')">
-    <input type="button" class="buttonclick" value="/" onclick="numberEntry('/')">
 
-    <input type="button" class="buttonclick" value="=" onclick="numberEntry('=')">
-    <input type="text" name="display" value="" readonly>
-    <textarea></textarea>
+    <!--<input type="text" name="display" value="" readonly>-->
+    <!--<textarea></textarea>-->
 
 
 </form>
