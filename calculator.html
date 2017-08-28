@@ -29,28 +29,28 @@
         <td><input type="button" class="buttonclick" value="1" onclick="numberEntry('1')"></td>
         <td><input type="button" class="buttonclick" value="2" onclick="numberEntry('2')"></td>
         <td><input type="button" class="buttonclick" value="3" onclick="numberEntry('3')"></td>
-        <td><input type="button" class="buttonclick" value="+" onclick="operatorfx('+')"></td>
+        <td><input type="button" class="buttonclick operators " value="+"></td>
     </tr>
 
     <tr>
         <td><input type="button" class="buttonclick" value="4" onclick="numberEntry('4')"></td>
         <td><input type="button" class="buttonclick" value="5" onclick="numberEntry('5')"></td>
         <td><input type="button" class="buttonclick" value="6" onclick="numberEntry('6')"></td>
-        <td><input type="button" class="buttonclick" value="-" onclick="operatorfx('-')"></td>
+        <td><input type="button" class="buttonclick operators" value="-"></td>
     </tr>
 
     <tr>
         <td><input type="button" class="buttonclick" value="7" onclick="numberEntry('7')"></td>
         <td><input type="button" class="buttonclick" value="8" onclick="numberEntry('8')"></td>
         <td><input type="button" class="buttonclick" value="9" onclick="numberEntry('9')"></td>
-        <td><input type="button" class="buttonclick" value="*" onclick="operatorfx('*')"></td>
+        <td><input type="button" class="buttonclick operators" value="*"></td>
     </tr>
 
     <tr>
         <td><input type="button" class="buttonclick" value="C"  onclick="clearFields()"></td>
         <td><input type="button" class="buttonclick" value="0" onclick="numberEntry('0')"></td>
         <td><input type="button" class="buttonclick" value="=" onclick="equals()"></td>
-        <td> <input type="button" class="buttonclick" value="/" onclick="operatorfx('/')"></td>
+        <td> <input type="button" class="buttonclick operators" value="/"></td>
     </tr>
     </table>
     </div>
@@ -66,6 +66,12 @@
         var firstEntry = document.getElementById("entry");
         var binaryOperator = document.getElementById("operator");
         var secondEntry=document.getElementById("secondEntry");
+        var calcOperators=document.getElementsByClassName("operators");
+
+        for(var i=0; i<calcOperators.length;i++){
+
+            calcOperators[i].addEventListener('click', operatorfx)
+        }
 
     function clearFields(){
 //            document.getElementById('calculator').reset();
@@ -83,9 +89,13 @@
 
         }
         }
-    function operatorfx(clickedEntry){
-            binaryOperator.setAttribute("value",clickedEntry);
+
+    function operatorfx(){
+            binaryOperator.setAttribute("value",this.value);
         }
+
+
+
     function equals(){
         var firstnum=Number(firstEntry.getAttribute("value"));
         var secondnum=Number(secondEntry.getAttribute("value"));
