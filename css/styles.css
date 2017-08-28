@@ -4,9 +4,9 @@
 }
 
 .screen {
-	max-width: 100%;
+	width: 100%;
 }
 
-#calculator {
+.calculator {
 	max-width: 40%;
 }

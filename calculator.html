@@ -7,7 +7,7 @@
 </head>
 <body>
 <form name="calculator">
-    <div id="calculator">
+    <div class="calculator">
         <div class="top">
             <div class="screen">
 
@@ -19,35 +19,38 @@
 
     <table>
         <tr>
-        <input class="screen" id="result" type="text" name="display" value="" readonly>
+        <input class="screen" id="entry" name="display" value="" readonly>
+            <input class="screen" id="operator" name="display" value="" readonly>
+            <input class="screen" id="secondEntry" name="display" value="" readonly>
+
         </tr>
 
     <tr>
         <td><input type="button" class="buttonclick" value="1" onclick="numberEntry('1')"></td>
         <td><input type="button" class="buttonclick" value="2" onclick="numberEntry('2')"></td>
         <td><input type="button" class="buttonclick" value="3" onclick="numberEntry('3')"></td>
-        <td><input type="button" class="buttonclick" value="+" onclick="numberEntry('+')"></td>
+        <td><input type="button" class="buttonclick" value="+" onclick="operatorfx('+')"></td>
     </tr>
 
     <tr>
         <td><input type="button" class="buttonclick" value="4" onclick="numberEntry('4')"></td>
         <td><input type="button" class="buttonclick" value="5" onclick="numberEntry('5')"></td>
         <td><input type="button" class="buttonclick" value="6" onclick="numberEntry('6')"></td>
-        <td><input type="button" class="buttonclick" value="-" onclick="numberEntry('-')"></td>
+        <td><input type="button" class="buttonclick" value="-" onclick="operatorfx('-')"></td>
     </tr>
 
     <tr>
         <td><input type="button" class="buttonclick" value="7" onclick="numberEntry('7')"></td>
         <td><input type="button" class="buttonclick" value="8" onclick="numberEntry('8')"></td>
         <td><input type="button" class="buttonclick" value="9" onclick="numberEntry('9')"></td>
-        <td><input type="button" class="buttonclick" value="*" onclick="numberEntry('*')"></td>
+        <td><input type="button" class="buttonclick" value="*" onclick="operatorfx('*')"></td>
     </tr>
 
     <tr>
-        <td><input type="reset" class="buttonclick" value="C"  onclick="reset()"></td>
+        <td><input type="button" class="buttonclick" value="C"  onclick="clearFields()"></td>
         <td><input type="button" class="buttonclick" value="0" onclick="numberEntry('0')"></td>
-        <td><input type="button" class="buttonclick" value="=" onclick="numberEntry('=')"></td>
-        <td> <input type="button" class="buttonclick" value="/" onclick="numberEntry('/')"></td>
+        <td><input type="button" class="buttonclick" value="=" onclick="equals()"></td>
+        <td> <input type="button" class="buttonclick" value="/" onclick="operatorfx('/')"></td>
     </tr>
     </table>
     </div>
@@ -60,25 +63,51 @@
 <script>
     "use strict";
 
-        var output;
+        var firstEntry = document.getElementById("entry");
+        var binaryOperator = document.getElementById("operator");
+        var secondEntry=document.getElementById("secondEntry");
 
-        var finalCalc = document.getElementById("result");
-
-        function reset(){
-            document.getElementById('calculator').reset();
+    function clearFields(){
+//            document.getElementById('calculator').reset();
+        firstEntry.setAttribute("value", "");
+        binaryOperator.setAttribute("value", "");
+        secondEntry.setAttribute("value", "");
         }
-
-        function numberEntry(clickedNumber) {
-
-            var listValue = document.getElementsByClassName('buttonclick').value=clickedNumber;
-            console.log(listValue);
-
-            return finalCalc.innerHTML = clickedNumber;
-
-            console.log(clickedNumber);
+    function numberEntry(clickedNumber) {
+        console.log(binaryOperator.getAttribute("value"));
+        if(binaryOperator.getAttribute("value")==="") {
+            firstEntry.setAttribute("value", (firstEntry.getAttribute("value") + clickedNumber));
         }
+        else{
+            secondEntry.setAttribute("value", secondEntry.getAttribute("value") + clickedNumber);
 
-
+        }
+        }
+    function operatorfx(clickedEntry){
+            binaryOperator.setAttribute("value",clickedEntry);
+        }
+    function equals(){
+        var firstnum=Number(firstEntry.getAttribute("value"));
+        var secondnum=Number(secondEntry.getAttribute("value"));
+        var total;
+        switch(binaryOperator.getAttribute("value")){
+            case "+":
+                total=firstnum+secondnum;
+                break;
+            case "-":
+                total=firstnum-secondnum;
+                break;
+            case "*":
+                total=firstnum*secondnum;
+                break;
+            case "/":
+                total=firstnum/secondnum;
+                break;
+        }
+        firstEntry.setAttribute("value",total);
+        binaryOperator.setAttribute("value", "");
+        secondEntry.setAttribute("value", "");
+    }
 
 </script>
 </body>
