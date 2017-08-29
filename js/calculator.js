@@ -30,11 +30,11 @@ function clearFields(){
 function numberEntry() {
     console.log(binaryOperator.getAttribute("value"));
     if(binaryOperator.getAttribute("value")==="") {
-        firstEntry.setAttribute("value", this.value + firstEntry.value);
+        firstEntry.setAttribute("value", firstEntry.value + this.value);
 
     }
     else{
-        secondEntry.setAttribute("value", this.value + secondEntry.value);
+        secondEntry.setAttribute("value", secondEntry.value + this.value);
 
     }
 }
