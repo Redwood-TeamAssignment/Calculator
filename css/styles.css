@@ -4,9 +4,21 @@
 }
 
 .screen {
-	width: 100%;
+	width:20%;
 }
 
-.calculator {
-	max-width: 40%;
+table {
+	width:20%;
+	background-color: cornflowerblue;
+	box-shadow: 5px 5px 3px #888888;
+
+}
+.buttonclick{
+	box-shadow: 2px 2px 1px #888888;
+	background-color: #AC526E;
+	color:#FCC6E2;
+}
+.casing{
+	clear:both;
+
 }
