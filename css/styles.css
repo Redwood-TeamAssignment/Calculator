@@ -29,4 +29,9 @@ table {
 input{
 	text-align: center;
 }
-
+.console{
+	float: left;
+}
+.row{
+	clear: left;
+}
