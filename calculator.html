@@ -3,135 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<form name="calculator">
-    <div class="calculator">
-        <div class="top">
-            <div class="screen">
-            </div>
-        </div>
+
+    <div class="calculator col-md-2 text-center center-block container123 ">
+
         <div class="casing">
 
+            <div class="top">
 
         <input class="screen" id="entry" name="display" value="" readonly>
            <br>
             <input class="screen" id="operator" name="display" value="" readonly>
             <br>
             <input class="screen" id="secondEntry" name="display" value="" readonly>
-
-
-
-        <div class="console">
-            <div class="row">
-                <input type="button" class="buttonclick number" value="1">
-                <input type="button" class="buttonclick number" value="2">
-                <input type="button" class="buttonclick number" value="3">
-                <input type="button" class="buttonclick operators" value="+">
-            </div>
-
-            <div class="row">
-                <input type="button" class="buttonclick number" value="4">
-                <input type="button" class="buttonclick number" value="5">
-                <input type="button" class="buttonclick number" value="6">
-                <input type="button" class="buttonclick operators" value="-">
             </div>
 
 
+        <div class="container-fluid">
+            <div class="row space" id="first-row">
+                <input type="button" class="buttonclick number col-md-3" value="1">
+                <input type="button" class="buttonclick number col-md-3" value="2">
+                <input type="button" class="buttonclick number col-md-3" value="3">
+                <input type="button" class="buttonclick operators col-md-3" value="+">
+            </div>
 
-        <input type="button" class="buttonclick number" value="7">
-        <input type="button" class="buttonclick number" value="8">
-        <input type="button" class="buttonclick number" value="9">
-        <input type="button" class="buttonclick operators" value="*">
+            <div class="row space">
+                <input type="button" class="buttonclick number col-md-3 text-center" value="4">
+                <input type="button" class="buttonclick number col-md-3" value="5">
+                <input type="button" class="buttonclick number col-md-3" value="6">
+                <input type="button" class="buttonclick operators col-md-3" value="-">
+            </div>
 
 
+            <div class="row space">
+                <input type="button" class="buttonclick number col-md-3" value="7">
+                <input type="button" class="buttonclick number col-md-3" value="8">
+                <input type="button" class="buttonclick number col-md-3" value="9">
+                <input type="button" class="buttonclick operators col-md-3" value="*">
+            </div>
 
-        <input type="button" class="buttonclick" id="clear" value="C">
-        <input type="button" class="buttonclick number" value="0">
-        <input type="button" class="buttonclick" id="equals" value="=">
-        <input type="button" class="buttonclick operators" value="/">
-
+            <div class="row space">
+                <input type="button" class="buttonclick col-md-3" id="clear" value="C">
+                <input type="button" class="buttonclick number col-md-3" value="0">
+                <input type="button" class="buttonclick col-md-3" id="equals" value="=">
+                <input type="button" class="buttonclick operators col-md-3" value="/">
+            </div>
         </div>
     </div>
     </div>
 
-
-
-
-</form>
-
-<script>
-    "use strict";
-
-        var firstEntry = document.getElementById("entry");
-        var binaryOperator = document.getElementById("operator");
-        var secondEntry=document.getElementById("secondEntry");
-        var calcOperators=document.getElementsByClassName("operators");
-        var numberClicks=document.getElementsByClassName("number");
-        var calcClear=document.getElementById("clear");
-        var calcExecute=document.getElementById("equals");
-
-        for(var i=0; i<calcOperators.length;i++){
-
-            calcOperators[i].addEventListener('click', operatorfx);
-        }
-
-        for(var n=0; n<numberClicks.length;n++){
-
-            numberClicks[n].addEventListener('click', numberEntry);
-    }
-
-        calcClear.addEventListener('click', clearFields);
-        calcExecute.addEventListener('click', equals);
-
-    function clearFields(){
-//            document.getElementById('calculator').reset();
-        firstEntry.setAttribute("value", "");
-        binaryOperator.setAttribute("value", "");
-        secondEntry.setAttribute("value", "");
-        }
-    function numberEntry() {
-        console.log(binaryOperator.getAttribute("value"));
-        if(binaryOperator.getAttribute("value")==="") {
-            firstEntry.setAttribute("value", this.value + firstEntry.value);
-
-        }
-        else{
-            secondEntry.setAttribute("value", this.value + secondEntry.value);
-
-        }
-        }
-
-    function operatorfx(){
-            binaryOperator.setAttribute("value",this.value);
-        }
-
-
-
-    function equals(){
-        var firstnum=Number(firstEntry.getAttribute("value"));
-        var secondnum=Number(secondEntry.getAttribute("value"));
-        var total;
-        switch(binaryOperator.getAttribute("value")){
-            case "+":
-                total=firstnum+secondnum;
-                break;
-            case "-":
-                total=firstnum-secondnum;
-                break;
-            case "*":
-                total=firstnum*secondnum;
-                break;
-            case "/":
-                total=firstnum/secondnum;
-                break;
-        }
-        firstEntry.setAttribute("value",total);
-        binaryOperator.setAttribute("value", "");
-        secondEntry.setAttribute("value", "");
-    }
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
 
 </script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/calculator.js"></script>
 </body>
 </html>

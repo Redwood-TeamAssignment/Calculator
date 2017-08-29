@@ -1,37 +1,55 @@
 .screen {
-	width:32.5%;
-	clear: left;
 	background: black;
 	color:chartreuse;
 	opacity:0.6;
 }
 
-table {
-	width:30%;
-	height:200px;
-	background-color: darkgray;
-	box-shadow: 5px 5px 3px #888888;
-	box-sizing: border-box;
+.buttonclick {
 
-
-}
-.buttonclick{
-	box-shadow: 2px 2px 1px #888888;
-	background-color: darkslateblue;
-	color:darksalmon;
+	background-color: #FF687E;
+	color: #DEFDE0;
 	box-sizing: border-box;
-	border-radius:15px;
+	box-shadow: 3px 3px 1px #888888;
+	border-radius: 30px;
 	font-size: 20px;
 	padding-right: 20px;
-	margin: 5px;
 
 }
-input{
-	text-align: center;
+.calculator {
+
+	background-color: #E0CDFF;
+	box-shadow: 5px 5px 3px #888888;
+	border-radius: 5px;
+	margin-left: 42%;
+	margin-top:15%;
 }
-.console{
-	float: left;
+input#entry.screen,input#operator.screen, input#secondEntry.screen{
+	width: 100%;
+	box-shadow: 3px 3px 1px #888888;
+	padding-top:5px;
+	margin-top:5px;
+
 }
-.row{
-	clear: left;
+input.buttonclick.number.col-md-3{
+	padding-right: 20px;
+	padding-left: 18px;
 }
+input.buttonclick.operators.col-md-3{
+	padding-right: 20px;
+	padding-left: 18px;
+}
+input#clear.buttonclick.col-md-3,input#equals.buttonclick.col-md-3{
+	padding-right: 20px;
+	paddingleft:15px;
+}
+
+#first-row{
+	margin-top: 15px;
+}
+.space{
+	margin-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+
+}
+
