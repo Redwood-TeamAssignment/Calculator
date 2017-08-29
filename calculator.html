@@ -26,31 +26,31 @@
         </tr>
 
     <tr>
-        <td><input type="button" class="buttonclick" value="1" onclick="numberEntry('1')"></td>
-        <td><input type="button" class="buttonclick" value="2" onclick="numberEntry('2')"></td>
-        <td><input type="button" class="buttonclick" value="3" onclick="numberEntry('3')"></td>
-        <td><input type="button" class="buttonclick operators " value="+"></td>
+        <td><input type="button" class="buttonclick number" value="1"></td>
+        <td><input type="button" class="buttonclick number" value="2"></td>
+        <td><input type="button" class="buttonclick number" value="3"></td>
+        <td><input type="button" class="buttonclick operators" value="+"></td>
     </tr>
 
     <tr>
-        <td><input type="button" class="buttonclick" value="4" onclick="numberEntry('4')"></td>
-        <td><input type="button" class="buttonclick" value="5" onclick="numberEntry('5')"></td>
-        <td><input type="button" class="buttonclick" value="6" onclick="numberEntry('6')"></td>
+        <td><input type="button" class="buttonclick number" value="4"></td>
+        <td><input type="button" class="buttonclick number" value="5"></td>
+        <td><input type="button" class="buttonclick number" value="6"></td>
         <td><input type="button" class="buttonclick operators" value="-"></td>
     </tr>
 
     <tr>
-        <td><input type="button" class="buttonclick" value="7" onclick="numberEntry('7')"></td>
-        <td><input type="button" class="buttonclick" value="8" onclick="numberEntry('8')"></td>
-        <td><input type="button" class="buttonclick" value="9" onclick="numberEntry('9')"></td>
+        <td><input type="button" class="buttonclick number" value="7"></td>
+        <td><input type="button" class="buttonclick number" value="8"></td>
+        <td><input type="button" class="buttonclick number" value="9"></td>
         <td><input type="button" class="buttonclick operators" value="*"></td>
     </tr>
 
     <tr>
-        <td><input type="button" class="buttonclick" value="C"  onclick="clearFields()"></td>
-        <td><input type="button" class="buttonclick" value="0" onclick="numberEntry('0')"></td>
-        <td><input type="button" class="buttonclick" value="=" onclick="equals()"></td>
-        <td> <input type="button" class="buttonclick operators" value="/"></td>
+        <td><input type="button" class="buttonclick" id="clear" value="C"></td>
+        <td><input type="button" class="buttonclick number" value="0"></td>
+        <td><input type="button" class="buttonclick" id="equals" value="="></td>
+        <td><input type="button" class="buttonclick operators" value="/"></td>
     </tr>
     </table>
     </div>
@@ -67,11 +67,22 @@
         var binaryOperator = document.getElementById("operator");
         var secondEntry=document.getElementById("secondEntry");
         var calcOperators=document.getElementsByClassName("operators");
+        var numberClicks=document.getElementsByClassName("number");
+        var calcClear=document.getElementById("clear");
+        var calcExecute=document.getElementById("equals");
 
         for(var i=0; i<calcOperators.length;i++){
 
-            calcOperators[i].addEventListener('click', operatorfx)
+            calcOperators[i].addEventListener('click', operatorfx);
         }
+
+        for(var n=0; n<numberClicks.length;n++){
+
+            numberClicks[n].addEventListener('click', numberEntry);
+    }
+
+        calcClear.addEventListener('click', clearFields);
+        calcExecute.addEventListener('click', equals);
 
     function clearFields(){
 //            document.getElementById('calculator').reset();
@@ -79,13 +90,14 @@
         binaryOperator.setAttribute("value", "");
         secondEntry.setAttribute("value", "");
         }
-    function numberEntry(clickedNumber) {
+    function numberEntry() {
         console.log(binaryOperator.getAttribute("value"));
         if(binaryOperator.getAttribute("value")==="") {
-            firstEntry.setAttribute("value", (firstEntry.getAttribute("value") + clickedNumber));
+            firstEntry.setAttribute("value", this.value + firstEntry.value);
+
         }
         else{
-            secondEntry.setAttribute("value", secondEntry.getAttribute("value") + clickedNumber);
+            secondEntry.setAttribute("value", this.value + secondEntry.value);
 
         }
         }
